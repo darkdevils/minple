@@ -78,11 +78,9 @@ textarea {
   border-radius: 10px;
 }
 textarea::placeholder {
-  font-weight: 300;
-  font-size: 16px;
+  font-size: 12px;
   letter-spacing: -0.5;
-  color: var(--warmGrey-color);
-  font-family: "Noto Sans KR", sans-serif;
+  color: #999;
 }
 
 /* ===========================
@@ -111,8 +109,9 @@ button, input, select, textarea {
 input, textarea {
   width: 100%;
   padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  border: 1px solid #EBEBEB;
+  border-radius: 8px;
+  background: #fff;
 }
 
 input:focus, textarea:focus {
@@ -143,10 +142,8 @@ input[type=search]::-webkit-search-cancel-button {
 ::placeholder {
   position: relative;
   text-align: left;
-  font-size: 16px;
-  line-height: 24px;
-  color: #757575;
-  font-weight: 300;
+  font-size: 12px;
+  color: #999;
   z-index: 1;
 }
 
@@ -1045,10 +1042,20 @@ input[type=search]::-webkit-search-cancel-button {
 }
 
 .gnb {
+  position: relative;
   height: 48px;
   width: 1280px;
   margin: 0 auto;
   background: #fff;
+}
+.gnb.on::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 48px;
+  width: 100%;
+  height: 50px;
+  background: #FAFAFA;
 }
 .gnb__list {
   display: flex;
@@ -1059,6 +1066,7 @@ input[type=search]::-webkit-search-cancel-button {
   position: relative;
 }
 .gnb__list .gnb__item a {
+  position: relative;
   display: flex;
   align-items: center;
   height: 48px;
@@ -1071,6 +1079,15 @@ input[type=search]::-webkit-search-cancel-button {
 .gnb__list .gnb__item.active > a {
   color: #544FE4;
   font-weight: 700;
+}
+.gnb__list .gnb__item.active > a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-bottom: 2px solid #544FE4;
+  border-radius: 2px;
 }
 .gnb__list .gnb__item.active .gnb__submenu {
   position: absolute;
@@ -1086,10 +1103,135 @@ input[type=search]::-webkit-search-cancel-button {
   display: none;
 }
 
-.container {
-  max-width: 100%;
-  padding: 0 16px;
+.layout__main {
+  width: 1280px;
   margin: 0 auto;
+  padding: 16px 0;
+}
+.layout__main .section-title {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.layout__main .section-title__heading {
+  color: #202224;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.32px;
+}
+.layout__main .section-title__desc {
+  color: #999;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  padding: 1px 0 0;
+}
+.layout__main .form-filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.layout__main .form-filters .form-filter__group {
+  display: flex;
+  gap: 8px;
+}
+.layout__main .form-filters .form-filter .form-filter__label {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.12px;
+}
+
+.select-box {
+  position: relative;
+  width: 240px;
+  cursor: pointer;
+  user-select: none;
+}
+.select-box.active .select-box__selected {
+  border-radius: 6px 6px 0 0;
+}
+.select-box__selected {
+  display: block;
+  height: 36px;
+  padding: 7px 12px;
+  border: 1px solid #EBEBEB;
+  border-radius: 6px;
+  background: #fff;
+}
+.select-box__options {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid #EBEBEB;
+  background: #fff;
+  border-radius: 0 0 6px 6px;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 10;
+  box-sizing: content-box;
+  padding-right: 0;
+  display: none;
+}
+.select-box__options::-webkit-scrollbar {
+  width: 4px;
+  border-left: 1px solid #EBEBEB;
+}
+.select-box__options::-webkit-scrollbar-track {
+  background: transparent;
+}
+.select-box__options::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+  margin-right: 4px;
+}
+.select-box__options::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6;
+}
+.select-box__options a {
+  display: block;
+  padding: 6px 12px;
+  color: #666;
+  text-decoration: none;
+}
+.select-box__options a:hover {
+  background-color: #F8F8FE;
+  color: #544FE4;
+  font-weight: 500;
+  letter-spacing: -0.28px;
+}
+.select-box.active .select-box__options {
+  display: block;
+}
+.select-box__option {
+  border-top: 1px solid #EBEBEB;
+}
+.select-box__option:first-child {
+  border-top: 0 none;
+}
+
+.form-filter__field .input-text {
+  width: 240px;
+  height: 36px;
+  background: #fff;
+  font-size: 12px;
+  letter-spacing: -0.12px;
+  color: #333;
+}
+
+.btn {
+  min-width: 80px;
+  height: 36px;
+  padding: 0 12px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -0.28px;
+  border-radius: 10px;
+  background: #544FE4;
 }
 
 /*# sourceMappingURL=style.css.map */

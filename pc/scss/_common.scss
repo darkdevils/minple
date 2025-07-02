@@ -74,11 +74,9 @@ textarea {
     resize: none;
     border-radius: 10px;
     &::placeholder {
-        font-weight: 300;
-        font-size: 16px;
+        font-size: 12px;
         letter-spacing: -0.5;
-        color: var(--warmGrey-color);
-        font-family: "Noto Sans KR", sans-serif;
+        color: #999;
     }
 }
 
@@ -108,8 +106,9 @@ button, input, select, textarea {
 input, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+    border: 1px solid #EBEBEB;
+    border-radius: 8px;
+    background: #fff;
 }
 
 input:focus, textarea:focus {
@@ -140,10 +139,8 @@ input[type='search']::-webkit-search-cancel-button {
 ::placeholder {
     position: relative;
     text-align: left;
-    font-size: 16px;
-    line-height: 24px;
-    color: #757575;
-    font-weight: 300;
+    font-size: 12px;
+    color: #999;
     z-index: 1;
 }
 :-ms-input-placeholder {
@@ -269,10 +266,22 @@ input[type='search']::-webkit-search-cancel-button {
 }
 
 .gnb {
+    position: relative;
     height: 48px;
     width: 1280px;
     margin: 0 auto;
     background: #fff;
+    &.on {
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 48px;
+            width: 100%;
+            height: 50px;
+            background: #FAFAFA;
+        }
+    }
     &__list {
         display: flex;
         justify-content: center;
@@ -280,6 +289,7 @@ input[type='search']::-webkit-search-cancel-button {
         .gnb__item {
             position: relative;
             a {
+                position: relative;
                 display: flex;
                 align-items: center;
                 height: 48px;
@@ -293,6 +303,16 @@ input[type='search']::-webkit-search-cancel-button {
                 > a {
                     color: #544FE4;
                     font-weight: 700;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        border-bottom: 2px solid #544FE4;
+                        border-radius: 2px;
+
+                    }
                 }
                 .gnb__submenu {
                     position: absolute;
@@ -315,9 +335,45 @@ input[type='search']::-webkit-search-cancel-button {
         }
     }
 }
-
-.container {
-    max-width: 100%;
-    padding: 0 16px;
+.layout__main {
+    width: 1280px;
     margin: 0 auto;
+    padding: 16px 0;
+    .section-title {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 20px;
+        &__heading {
+            color: #202224;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: -0.32px;
+        }
+        &__desc {
+            color: #999;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: -1px;
+            padding: 1px 0 0;
+        }
+    }
+    .form-filters {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+
+        .form-filter__group {
+            display: flex;
+            gap: 8px;
+        }
+        .form-filter {
+            .form-filter__label {
+                color: #666;
+                font-size: 12px;
+                font-weight: 500;
+                letter-spacing: -0.12px;
+            }
+        }
+    }
 }
+

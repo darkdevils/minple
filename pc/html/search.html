@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css">
   <title>밈플폰 - 검섹</title>
-  <link rel="stylesheet" href="../../../test/scss/_reset.scss">
 </head>
 <body>
 <div id="wrap">
@@ -31,7 +31,7 @@
   <!-- GNB -->
   <div class="gnb">
     <ul class="gnb__list">
-      <li class="gnb__item active"><a href="#">판매 정책 관리</a>
+      <li class="gnb__item"><a href="#">판매 정책 관리</a>
         <ul class="gnb__submenu">
           <li class="gnb__submenu-item"><a href="#">메뉴1-1</a></li>
           <li class="gnb__submenu-item"><a href="#">메뉴1-2</a></li>
@@ -58,45 +58,91 @@
         <span class="section-title__desc">밈플폰을 통해 접수된 상담 내용을 확인해 주세요.</span>
       </div>
       <div class="form-filters">
-        <div class="form-filter">
-          <strong class="form-filter__label">구분</strong>
-          <div class="select-box">
-            <span class="select-box__selected">제목</span>
-            <ul class="select-box__options">
-              <li class="select-box__option"><a href="#">제목1</a></li>
-              <li class="select-box__option"><a href="#">제목2</a></li>
-              <li class="select-box__option"><a href="#">제목3</a></li>
-              <li class="select-box__option"><a href="#">제목4</a></li>
-              <li class="select-box__option"><a href="#">제목5</a></li>
-            </ul>
+        <div class="form-filter__group">
+          <div class="form-filter">
+            <strong class="form-filter__label">구분</strong>
+            <div class="select-box">
+              <span class="select-box__selected">제목</span>
+              <ul class="select-box__options">
+                <li class="select-box__option"><a href="#">제목1</a></li>
+                <li class="select-box__option"><a href="#">제목2</a></li>
+                <li class="select-box__option"><a href="#">제목3</a></li>
+                <li class="select-box__option"><a href="#">제목4</a></li>
+                <li class="select-box__option"><a href="#">제목5</a></li>
+                <li class="select-box__option"><a href="#">제목6</a></li>
+                <li class="select-box__option"><a href="#">제목7</a></li>
+                <li class="select-box__option"><a href="#">제목8</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-filter">
+            <strong class="form-filter__label">개통유형</strong>
+            <div class="select-box">
+              <span class="select-box__selected">개통유형 A</span>
+              <ul class="select-box__options">
+                <li class="select-box__option"><a href="#">전체</a></li>
+                <li class="select-box__option"><a href="#">개통유형 A</a></li>
+                <li class="select-box__option"><a href="#">개통유형 B</a></li>
+                <li class="select-box__option"><a href="#">개통유형 C</a></li>
+                <li class="select-box__option"><a href="#">개통유형 D</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-filter">
+            <strong class="form-filter__label">밈플 닉네임</strong>
+            <div class="form-filter__field">
+              <input type="text" name="nickname" id="nickname" class="input-text" placeholder="닉네임 입력">
+            </div>
+          </div>
+          <div class="form-filter">
+            <strong class="form-filter__label">방문예정일</strong>
+            <div class="form-filter__field">
+              <input type="text" id="datepicker" class="input-text" placeholder="YYYY-MM-DD">
+            </div>
           </div>
         </div>
-        <div class="form-filter">
-          <strong class="form-filter__label">개통유형</strong>
-          <div class="select-box">
-            <span class="select-box__selected">개통유형 A</span>
-            <ul class="select-box__options">
-              <li class="select-box__option"><a href="#">전체</a></li>
-              <li class="select-box__option"><a href="#">개통유형 A</a></li>
-              <li class="select-box__option"><a href="#">개통유형 B</a></li>
-              <li class="select-box__option"><a href="#">개통유형 C</a></li>
-              <li class="select-box__option"><a href="#">개통유형 D</a></li>
-            </ul>
-          </div>
+        <div class="form-filter__action">
+          <button type="button" class="btn btn--primary">조회</button>
         </div>
       </div>
-      <div class="form-filter">
-        <strong class="form-filter__label">밈플 닉네임</strong>
-        <div class="form-filter__field">
-          <input type="text" name="nickname" id="nickname" class="input-text" placeholder="닉네임 입력">
+      <div class="consult-status">
+        <div class="consult-status__header">
+          <h3 class="section-title__heading">상담접수현황</h3>
+          <span class="section-title__count">(총 200건)</span>
+        </div>
+        <div class="consult-status__actions">
+          <button type="button" class="btn btn--small">신규</button>
+          <button type="button" class="btn btn--small">방문/미방문 </button>
         </div>
       </div>
-
-      <div class="form-filter">
-        <strong class="form-filter__label">방문예정일</strong>
-        <div>
-          <input type="text" id="datepicker" class="input-text" placeholder="YYYY-MM-DD">
-        </div>
+      <div class="consult-status__table">
+        <table class="table table--list">
+          <colgroup>
+            <col>
+            <col>
+            <col>
+            <col>
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th><input type="checkbox" name="" id=""></th>
+              <th>게시물 제목</th>
+              <th>등록일시</th>
+              <th>조회수</th>
+              <th>첨부</th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><input type="checkbox" name="" id=""></td>
+            <td>공지사항 제목입니다.</td>
+            <td>2024-01-01 10:20</td>
+            <td>0</td>
+            <td>확인해야 할 내용.zip</td>
+          </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </main>
@@ -115,11 +161,12 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // gnb
     const gnb = document.querySelector('.gnb');
     const gnbItems = document.querySelectorAll('.gnb__item > a');
     const subMenuLinks = document.querySelectorAll('.gnb__submenu-item > a');
 
-    // ✅ 초기 상태: gnb__item.active 중에 submenu 있는 경우 → gnb에 on 추가
+    // 초기 상태: gnb__item.active 중에 submenu 있는 경우 → gnb에 on 추가
     const activeGnbItem = document.querySelector('.gnb__item.active');
     if (activeGnbItem && activeGnbItem.querySelector('.gnb__submenu')) {
       gnb.classList.add('on');
@@ -127,7 +174,7 @@
       gnb.classList.remove('on');
     }
 
-    // ✅ 상위 메뉴 클릭 시
+    // 상위 메뉴 클릭 시
     gnbItems.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -157,7 +204,7 @@
       });
     });
 
-    // ✅ 하위 메뉴 클릭 시
+    // 하위 메뉴 클릭 시
     subMenuLinks.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
@@ -171,7 +218,40 @@
         this.parentElement.classList.add('active');
       });
     });
+
+    // select box
+    const selectBoxes = document.querySelectorAll('.select-box');
+
+    selectBoxes.forEach((box) => {
+      const selected = box.querySelector('.select-box__selected');
+      const options = box.querySelectorAll('.select-box__option a');
+
+      selected.addEventListener('click', () => {
+        // 모든 드롭다운 닫기
+        selectBoxes.forEach((b) => b.classList.remove('active'));
+        // 현재 선택박스만 열기
+        box.classList.toggle('active');
+      });
+
+      options.forEach((option) => {
+        option.addEventListener('click', (e) => {
+          e.preventDefault();
+          selected.textContent = option.textContent;
+          box.classList.remove('active');
+        });
+      });
+    });
+
+    // 다른 곳 클릭하면 닫기
+    document.addEventListener('click', (e) => {
+      selectBoxes.forEach((box) => {
+        if (!box.contains(e.target)) {
+          box.classList.remove('active');
+        }
+      });
+    });
   });
+
 </script>
 
 
