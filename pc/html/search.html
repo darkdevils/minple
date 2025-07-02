@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>밈플폰 - 검섹</title>
+  <link rel="stylesheet" href="../../../test/scss/_reset.scss">
+</head>
+<body>
+<div id="wrap">
+  <!-- 헤더 모듈 -->
+  <header class="layout__header header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="../img/logo.svg" alt="밈플폰">
+        <span class="header__logo-text">폰이싸 폰이싸 폰이싸 폰이싸 폰이싸 폰이싸 폰이싸</span>
+      </div>
+      <div class="header__user">
+        <div class="header__user-info">
+          <strong class="header__user-name">오펜타</strong>
+          <span class="header__user-branch">MIM폰 가양대교점</span>
+        </div>
+        <a href="#" class="header__auth">로그아웃</a>
+      </div>
+    </div>
+  </header>
+  <!-- //헤더 모듈 -->
+
+  <!-- GNB -->
+  <div class="gnb">
+    <ul class="gnb__list">
+      <li class="gnb__item active"><a href="#">판매 정책 관리</a>
+        <ul class="gnb__submenu">
+          <li class="gnb__submenu-item"><a href="#">메뉴1-1</a></li>
+          <li class="gnb__submenu-item"><a href="#">메뉴1-2</a></li>
+          <li class="gnb__submenu-item"><a href="#">메뉴1-3</a></li>
+        </ul>
+      </li>
+      <li class="gnb__item"><a href="#">상담/개통 관리</a>
+        <ul class="gnb__submenu">
+          <li class="gnb__submenu-item"><a href="#">상담접수관리</a></li>
+          <li class="gnb__submenu-item"><a href="#">개통관리</a></li>
+          <li class="gnb__submenu-item"><a href="#">마케팅대상관리</a></li>
+        </ul>
+      </li>
+      <li class="gnb__item"><a href="#">매장 관리</a></li>
+      <li class="gnb__item"><a href="#">커뮤니티</a></li>
+    </ul>
+  </div>
+  <!-- //GNB -->
+  <!-- 메인 콘텐츠 영역 -->
+  <main class="layout__main main">
+    <div class="main__container container">
+      <div class="section-title">
+        <h2 class="section-title__heading">상담 접수 관리</h2>
+        <span class="section-title__desc">밈플폰을 통해 접수된 상담 내용을 확인해 주세요.</span>
+      </div>
+      <div class="form-filters">
+        <div class="form-filter">
+          <strong class="form-filter__label">구분</strong>
+          <div class="select-box">
+            <span class="select-box__selected">제목</span>
+            <ul class="select-box__options">
+              <li class="select-box__option"><a href="#">제목1</a></li>
+              <li class="select-box__option"><a href="#">제목2</a></li>
+              <li class="select-box__option"><a href="#">제목3</a></li>
+              <li class="select-box__option"><a href="#">제목4</a></li>
+              <li class="select-box__option"><a href="#">제목5</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="form-filter">
+          <strong class="form-filter__label">개통유형</strong>
+          <div class="select-box">
+            <span class="select-box__selected">개통유형 A</span>
+            <ul class="select-box__options">
+              <li class="select-box__option"><a href="#">전체</a></li>
+              <li class="select-box__option"><a href="#">개통유형 A</a></li>
+              <li class="select-box__option"><a href="#">개통유형 B</a></li>
+              <li class="select-box__option"><a href="#">개통유형 C</a></li>
+              <li class="select-box__option"><a href="#">개통유형 D</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="form-filter">
+        <strong class="form-filter__label">밈플 닉네임</strong>
+        <div class="form-filter__field">
+          <input type="text" name="nickname" id="nickname" class="input-text" placeholder="닉네임 입력">
+        </div>
+      </div>
+
+      <div class="form-filter">
+        <strong class="form-filter__label">방문예정일</strong>
+        <div>
+          <input type="text" id="datepicker" class="input-text" placeholder="YYYY-MM-DD">
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- //메인 콘텐츠 영역 -->
+
+  <!-- 푸터 모듈 -->
+  <footer class="layout__footer footer">
+    <div class="footer__inner">
+      <!-- 푸터 컨텐츠 -->
+    </div>
+  </footer>
+  <!-- //푸터 모듈 -->
+
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const gnb = document.querySelector('.gnb');
+    const gnbItems = document.querySelectorAll('.gnb__item > a');
+    const subMenuLinks = document.querySelectorAll('.gnb__submenu-item > a');
+
+    // ✅ 초기 상태: gnb__item.active 중에 submenu 있는 경우 → gnb에 on 추가
+    const activeGnbItem = document.querySelector('.gnb__item.active');
+    if (activeGnbItem && activeGnbItem.querySelector('.gnb__submenu')) {
+      gnb.classList.add('on');
+    } else {
+      gnb.classList.remove('on');
+    }
+
+    // ✅ 상위 메뉴 클릭 시
+    gnbItems.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const parentLi = this.parentElement;
+
+        // 모든 상위 메뉴에서 active 제거
+        document.querySelectorAll('.gnb__item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // 현재 클릭된 메뉴 활성화
+        parentLi.classList.add('active');
+
+        // 하위 메뉴 유무에 따라 .gnb에 .on 클래스 제어
+        const subMenu = parentLi.querySelector('.gnb__submenu');
+        if (subMenu) {
+          gnb.classList.add('on');
+        } else {
+          gnb.classList.remove('on');
+        }
+
+        // 하위 메뉴 active 초기화
+        document.querySelectorAll('.gnb__submenu-item').forEach(item => {
+          item.classList.remove('active');
+        });
+      });
+    });
+
+    // ✅ 하위 메뉴 클릭 시
+    subMenuLinks.forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        // 모든 하위 메뉴에서 active 제거
+        document.querySelectorAll('.gnb__submenu-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        // 현재 선택한 하위 메뉴에 active 추가
+        this.parentElement.classList.add('active');
+      });
+    });
+  });
+</script>
+
+
+
+
+</body>
+</html>

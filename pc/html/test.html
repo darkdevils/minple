@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>밈플폰 - 검섹</title>
+  <style>
+    .gnb {
+      border-top: 2px solid #e74c3c; /* 상단 빨간 선 */
+      border-bottom: 1px solid #ddd;
+      font-family: sans-serif;
+    }
+
+    .gnb__list {
+      display: flex;
+      justify-content: space-around;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background: #fff;
+    }
+
+    .gnb__item {
+      position: relative;
+      padding: 12px 16px;
+    }
+
+    .gnb__link {
+      background: none;
+      border: none;
+      font-size: 14px;
+      color: #999;
+      cursor: pointer;
+    }
+
+    .gnb__item--active .gnb__link {
+      color: #3059f5;
+      font-weight: bold;
+      position: relative;
+    }
+
+    .gnb__item--active .gnb__link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 70%;
+      height: 2px;
+      background: #3059f5;
+    }
+
+    .gnb__submenu {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      background: #f9f9f9;
+      padding: 12px 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .gnb__submenu-item a {
+      text-decoration: none;
+      font-size: 13px;
+      color: #999;
+    }
+
+    .gnb__submenu-item a:hover,
+    .gnb__submenu-item a:focus {
+      color: #3059f5;
+      font-weight: 600;
+    }
+  </style>
+
+</head>
+<body>
+<div class="gnb">
+  <ul class="gnb__list">
+    <li class="gnb__item">
+      <button class="gnb__link">판매 정책 관리</button>
+    </li>
+    <li class="gnb__item gnb__item--active">
+      <button class="gnb__link">상담 / 개통 관리</button>
+      <ul class="gnb__submenu">
+        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">상담접수관리</a></li>
+        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">개통관리</a></li>
+        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">마케팅대상관리</a></li>
+      </ul>
+    </li>
+    <li class="gnb__item">
+      <button class="gnb__link">매장 관리</button>
+    </li>
+    <li class="gnb__item">
+      <button class="gnb__link">커뮤니티</button>
+    </li>
+  </ul>
+</div>
+
+
+</body>
+</html>

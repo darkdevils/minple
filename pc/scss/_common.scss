@@ -1,0 +1,323 @@
+
+/* ===========================
+   0. Web Font
+=========================== */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* ===========================
+   1. Reset (기본 초기화)
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px; /* 기본 14px 기준 (rem 단위 사용 가능) */
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #222;
+    background-color: #fff;
+    line-height: 1.5;
+    word-break: keep-all;
+    -webkit-font-smoothing: antialiased;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, input, select, textarea, button, span, em {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset, img {
+    border: 0 none;
+    vertical-align: top;
+}
+dl, ul, ol, menu, li {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    &:active,&:hover  {
+        text-decoration: none;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+article, aside, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+textarea {
+    width: 100%;
+    border: 0;
+    padding: 0;
+    font-size: 16px;
+    padding: 16px;
+    resize: none;
+    border-radius: 10px;
+    &::placeholder {
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: -0.5;
+        color: var(--warmGrey-color);
+        font-family: "Noto Sans KR", sans-serif;
+    }
+}
+
+/* ===========================
+   2. Typography
+=========================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* ===========================
+   3. Form Elements
+=========================== */
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+input:focus, textarea:focus {
+    border-color: #888;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 0 none;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {
+    -webkit-appearance: button;
+    border-radius: 0;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+}
+
+::placeholder {
+    position: relative;
+    text-align: left;
+    font-size: 16px;
+    line-height: 24px;
+    color: #757575;
+    font-weight: 300;
+    z-index: 1;
+}
+:-ms-input-placeholder {
+    color: var(--warmGrey-color);
+}
+
+/* ===========================
+   4. Accessibility
+=========================== */
+.blind {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* ===========================
+   5. Utility Classes
+=========================== */
+.margin {
+    margin-top: var(--marginTop) !important;
+    margin-bottom: var(--marginBottom) !important;
+    margin-right: var(--marginRight) !important;
+    margin-left: var(--marginLeft) !important;
+}
+.padding {
+    padding-top: var(--paddingTop) !important;
+    padding-bottom: var(--paddingBottom) !important;
+    padding-right: var(--paddingRight) !important;
+    padding-left: var(--paddingLeft) !important;
+}
+
+@for $i from 0 to 25 {
+    .mgTop#{$i * 5}{
+        margin-top: $i * 5px !important;
+    }
+    .mgLeft#{$i * 5}{
+        margin-left: $i * 5px !important;
+    }
+    .mgRight#{$i * 5}{
+        margin-right: $i * 5px !important;
+    }
+    .mgBottom#{$i * 5}{
+        margin-bottom: $i * 5px !important;
+    }
+
+    .padTop#{$i * 5}{
+        padding-top: $i * 5px !important;
+    }
+    .padLeft#{$i * 5}{
+        padding-left: $i * 5px !important;
+    }
+    .padRight#{$i * 5}{
+        padding-right: $i * 5px !important;
+    }
+    .padBottom#{$i * 5}{
+        padding-bottom: $i * 5px !important;
+    }
+}
+
+
+.hidden { display: none !important; }
+
+/* ===========================
+   6. Container & Layout
+=========================== */
+#wrap {
+    width: 100%;
+    background: #F4F5F6;
+}
+.layout__header {
+    &.header {
+        height: 48px;
+        background: #544FE4;
+    }
+    .header__inner {
+        display: flex;
+        justify-content: space-between;
+        width: 1280px;
+        margin: 0 auto;
+        .header__logo {
+            display: flex;
+            padding: 13px 45px;
+            gap: 12px;
+            &-text {
+                color: #fff;
+            }
+        }
+        .header__user {
+            display: flex;
+            color: #fff;
+            gap: 16px;
+            align-items: center;
+            &-info {
+                display: flex;
+
+                gap: 8px;
+                .header__user-name {
+                    font-weight: 700;
+                }
+                .header__user-branch {
+                    font-weight: 500;
+                }
+            }
+            .header__auth {
+                display: flex;
+                align-items: center;
+                border-radius: 8px;
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%), #544FE4;
+                height: 28px;
+                padding: 0 10px;
+                color: #fff;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: -0.12px;
+            }
+        }
+    }
+}
+
+.gnb {
+    height: 48px;
+    width: 1280px;
+    margin: 0 auto;
+    background: #fff;
+    &__list {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        .gnb__item {
+            position: relative;
+            a {
+                display: flex;
+                align-items: center;
+                height: 48px;
+                color: #757575;
+                font-size: 16px;
+                font-weight: 500;
+                letter-spacing: -1px;
+                min-width: 65px;
+            }
+            &.active {
+                > a {
+                    color: #544FE4;
+                    font-weight: 700;
+                }
+                .gnb__submenu {
+                    position: absolute;
+                    display: flex;
+                    gap: 40px;
+                    height: 50px;
+                    .gnb__submenu-item {
+                        &.active {
+                            a {
+                                color: #544FE4;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+            .gnb__submenu {
+                display: none;
+            }
+        }
+    }
+}
+
+.container {
+    max-width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
