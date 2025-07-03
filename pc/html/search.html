@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -58,56 +58,58 @@
   <!-- 메인 콘텐츠 영역 -->
   <main class="layout__main main">
     <div class="main__container container">
-      <div class="section-title">
-        <h2 class="section-title__heading">상담 접수 관리</h2>
-        <span class="section-title__desc">밈플폰을 통해 접수된 상담 내용을 확인해 주세요.</span>
-      </div>
-      <div class="form-filters">
-        <div class="form-filter__group">
-          <div class="form-filter">
-            <strong class="form-filter__label">구분</strong>
-            <div class="select-box">
-              <span class="select-box__selected">제목</span>
-              <ul class="select-box__options">
-                <li class="select-box__option"><a href="#">제목1</a></li>
-                <li class="select-box__option"><a href="#">제목2</a></li>
-                <li class="select-box__option"><a href="#">제목3</a></li>
-                <li class="select-box__option"><a href="#">제목4</a></li>
-                <li class="select-box__option"><a href="#">제목5</a></li>
-                <li class="select-box__option"><a href="#">제목6</a></li>
-                <li class="select-box__option"><a href="#">제목7</a></li>
-                <li class="select-box__option"><a href="#">제목8</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="form-filter">
-            <strong class="form-filter__label">개통유형</strong>
-            <div class="select-box">
-              <span class="select-box__selected">개통유형 A</span>
-              <ul class="select-box__options">
-                <li class="select-box__option"><a href="#">전체</a></li>
-                <li class="select-box__option"><a href="#">개통유형 A</a></li>
-                <li class="select-box__option"><a href="#">개통유형 B</a></li>
-                <li class="select-box__option"><a href="#">개통유형 C</a></li>
-                <li class="select-box__option"><a href="#">개통유형 D</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="form-filter">
-            <strong class="form-filter__label">밈플 닉네임</strong>
-            <div class="form-filter__field">
-              <input type="text" name="nickname" id="nickname" class="input-text" placeholder="닉네임 입력">
-            </div>
-          </div>
-          <div class="form-filter">
-            <strong class="form-filter__label">방문예정일</strong>
-            <div class="form-filter__field">
-              <input type="text" id="dateInput" class="input-text" placeholder="YYYY-MM-DD">
-            </div>
-          </div>
+      <div class="section section--consult">
+        <div class="section-title">
+          <h2 class="section-title__heading">상담 접수 관리</h2>
+          <span class="section-title__desc">밈플폰을 통해 접수된 상담 내용을 확인해 주세요.</span>
         </div>
-        <div class="form-filter__action">
-          <button type="button" class="btn btn--primary">조회</button>
+        <div class="form-filters">
+          <div class="form-filter__group">
+            <div class="form-filter">
+              <strong class="form-filter__label">구분</strong>
+              <div class="select-box">
+                <span class="select-box__selected">제목</span>
+                <ul class="select-box__options">
+                  <li class="select-box__option"><a href="#">제목1</a></li>
+                  <li class="select-box__option"><a href="#">제목2</a></li>
+                  <li class="select-box__option"><a href="#">제목3</a></li>
+                  <li class="select-box__option"><a href="#">제목4</a></li>
+                  <li class="select-box__option"><a href="#">제목5</a></li>
+                  <li class="select-box__option"><a href="#">제목6</a></li>
+                  <li class="select-box__option"><a href="#">제목7</a></li>
+                  <li class="select-box__option"><a href="#">제목8</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-filter">
+              <strong class="form-filter__label">개통유형</strong>
+              <div class="select-box">
+                <span class="select-box__selected">개통유형 A</span>
+                <ul class="select-box__options">
+                  <li class="select-box__option"><a href="#">전체</a></li>
+                  <li class="select-box__option"><a href="#">개통유형 A</a></li>
+                  <li class="select-box__option"><a href="#">개통유형 B</a></li>
+                  <li class="select-box__option"><a href="#">개통유형 C</a></li>
+                  <li class="select-box__option"><a href="#">개통유형 D</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-filter">
+              <strong class="form-filter__label">밈플 닉네임</strong>
+              <div class="form-filter__field">
+                <input type="text" name="nickname" id="nickname" class="input-text" placeholder="닉네임 입력">
+              </div>
+            </div>
+            <div class="form-filter">
+              <strong class="form-filter__label">방문예정일</strong>
+              <div class="form-filter__field datepicker">
+                <input type="text" id="dateInput" class="input-text" placeholder="YYYY-MM-DD">
+              </div>
+            </div>
+          </div>
+          <div class="form-filter__action">
+            <button type="button" class="btn btn--primary" id="openConsultModal">조회</button>
+          </div>
         </div>
       </div>
       <div class="consult-status">
@@ -289,13 +291,83 @@
   <!-- 푸터 모듈 -->
   <footer class="layout__footer footer">
     <div class="footer__inner">
-      <!-- 푸터 컨텐츠 -->
+      <div class="footer__logo">
+        <div class="logo-img"><img src="../img/footer_logo.svg" alt="Pantas"></div>
+        <span>(주)펜타에스</span>
+      </div>
+      <div class="footer__info">
+        <address class="footer__address">서울특별시 강서구 양천로 532번지 508호 (가양역 더리브 아너비즈타워)</address>
+        <div class="footer__contact">
+          <span>Tel  02-6952-9608</span>
+          <span>Fax  02-6020-9608</span>
+          <span>Email  pentasceo@gmail.com</span>
+          <span>대표이사  박태영</span>
+        </div>
+      </div>
+      <div class="footer__copyright">Copyright &copy; (주)펜타에스. All rights Reserved</div>
     </div>
   </footer>
   <!-- //푸터 모듈 -->
-
 </div>
 
+<!-- 상담 접수 상세 모달 -->
+<div class="modal consult-modal">
+  <button type="button" class="btn-topclose consult-modal__close-btn"><span class="blind">모달닫기</span></button>
+  <div class="modal__header">
+    <h3 class="modal__title">상담 접수 상세</h3>
+    <span class="modal__subtitle">필수 입력 정보입니다</span>
+  </div>
+  <section class="modal__info-list">
+    <ul class="info-list">
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value">
+          <a href="#">공지사항 제목입니다.</a>
+          <div class="input-checkbox"><input type="checkbox" class="custom-checkbox" id="ck1"><label for="ck1">오프라인</label></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <section class="modal__requests">
+    <div class="requests__item">
+      <strong class="requests__label">고객 요청사항</strong>
+      <div class="requests__textarea-wrapper">
+        <textarea name="" id="" cols="30" rows="10" placeholder="상담시 고객이 요청한 내용을 입력해주세요 &#10;ex) 핸드폰 색상 등"></textarea>
+      </div>
+    </div>
+    <div class="requests__item">
+      <strong class="requests__label">고객 요청사항</strong>
+      <div class="requests__textarea-wrapper">
+        <textarea name="" id="" cols="30" rows="10" placeholder="상담시 고객이 요청한 내용을 입력해주세요 &#10;ex) 핸드폰 색상 등"></textarea>
+      </div>
+    </div>
+  </section>
+  <div class="modal__footer">
+    <button type="button" class="btn consult-modal__close-btn">닫기</button>
+    <button type="button" class="btn consult-modal__btn-save">저장</button>
+  </div>
+</div>
+<!-- //상담 접수 상세 모달 -->
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
@@ -411,6 +483,8 @@
 
   function toggleRowClass(checkbox) {
       const row = checkbox.closest('tr');
+      if (!row) return; // tr이 없으면 아무 작업도 하지 않음
+
       if (checkbox.checked) {
           row.classList.add('checked');
       } else {
@@ -418,6 +492,7 @@
       }
   }
 
+  // datepicker
   flatpickr("#dateInput", {
       locale: "ko",
       dateFormat: "Y-m-d",
@@ -430,10 +505,10 @@
           const monthElement = instance.calendarContainer.querySelector(".flatpickr-month");
 
           if (monthElement) {
-              // 포인터 이벤트 막기 (기본 클릭 막기)
+              /*// 포인터 이벤트 막기 (기본 클릭 막기)
               monthElement.style.pointerEvents = "none";
               // 커서도 막힌 느낌으로
-              monthElement.style.cursor = "default";
+              monthElement.style.cursor = "default";*/
           }
 
           if (navContainer) {
@@ -444,19 +519,15 @@
               yearNavWrapper.style.margin = "4px 0";
 
               const prevYearBtn = document.createElement("button");
-              prevYearBtn.textContent = "◀ 1년";
-              prevYearBtn.style.fontSize = "12px";
-              prevYearBtn.style.padding = "2px 6px";
               prevYearBtn.style.cursor = "pointer";
+              prevYearBtn.classList.add('prev');
               prevYearBtn.addEventListener("click", () => {
                   instance.changeYear(instance.currentYear - 1);
               });
 
               const nextYearBtn = document.createElement("button");
-              nextYearBtn.textContent = "1년 ▶";
-              nextYearBtn.style.fontSize = "12px";
-              nextYearBtn.style.padding = "2px 6px";
               nextYearBtn.style.cursor = "pointer";
+              nextYearBtn.classList.add('next');
               nextYearBtn.addEventListener("click", () => {
                   instance.changeYear(instance.currentYear + 1);
               });
@@ -496,11 +567,22 @@
       }
   });
 
+  // 모달팝업
+  const modal = document.querySelector('.modal');
+  const openBtn = document.getElementById('openConsultModal');
+  const closeBtn = document.querySelector('.consult-modal__close-btn');
+
+  // 모달 열기
+  openBtn.addEventListener('click', () => {
+    modal.classList.add('modal--visible');
+  });
+
+  // 모달 닫기
+  closeBtn.addEventListener('click', () => {
+    modal.classList.remove('modal--visible');
+  });
 
 </script>
-
-
-
 
 </body>
 </html>

@@ -217,14 +217,22 @@ input[type='search']::-webkit-search-cancel-button {
 }
 .layout__header {
     &.header {
+        position: fixed;
+        width: 100%;
         height: 48px;
         background: #544FE4;
+        z-index: 10;
     }
     .header__inner {
+        position: fixed;
+        left: calc(50% - 640px);
         display: flex;
         justify-content: space-between;
         width: 1280px;
+        height: 48px;
         margin: 0 auto;
+        background: #544FE4;
+        z-index: 10;
         .header__logo {
             display: flex;
             padding: 13px 45px;
@@ -266,11 +274,14 @@ input[type='search']::-webkit-search-cancel-button {
 }
 
 .gnb {
-    position: relative;
+    position: fixed;
+    top: 48px;
+    left: calc(50% - 640px);
     height: 48px;
     width: 1280px;
     margin: 0 auto;
     background: #fff;
+    z-index: 10;
     &.on {
         &::before {
             content: "";
@@ -286,6 +297,7 @@ input[type='search']::-webkit-search-cancel-button {
         display: flex;
         justify-content: center;
         gap: 40px;
+        height: 48px;
         .gnb__item {
             position: relative;
             a {
@@ -338,7 +350,15 @@ input[type='search']::-webkit-search-cancel-button {
 .layout__main {
     width: 1280px;
     margin: 0 auto;
-    padding: 16px 0 40px;
+    padding: 0 0 40px;
+    background: #F4F5F6;
+    &.main {
+        padding: 96px 0 40px;
+    }
+    .section {
+        background: #FAFAFA;
+        padding: 16px 28px 0;
+    }
     .section-title {
         display: flex;
         gap: 12px;
@@ -373,11 +393,69 @@ input[type='search']::-webkit-search-cancel-button {
                 font-size: 12px;
                 font-weight: 500;
                 letter-spacing: -0.12px;
+                padding: 0 0 0 12px;
             }
         }
     }
 }
 
-.layout__footer {
+.footer {
     background: #F4F5F6;
+    padding: 0 0 24px;
+    &__inner {
+        display: flex;
+        align-items: center;
+        width: 1280px;
+        margin: 0 auto;
+        padding: 0 30px;
+
+    }
+    &__logo {
+        display: flex;
+        flex-flow: column;
+        .logo-img {
+            height: 32px;
+        }
+        span {
+            color: rgba(0, 0, 0, 0.40);
+            font-size: 12px;
+            letter-spacing: -0.5px;
+        }
+    }
+    &__info {
+        margin-left: 80px;
+        * {
+            color: rgba(0, 0, 0, 0.40);
+            font-size: 12px;
+        }
+        .footer__address {
+            font-style: normal;
+        }
+        .footer__contact {
+            display: flex;
+            gap: 17px;
+            margin-top: 12px;
+            span + span {
+                position: relative;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -8px;
+                    top: 3px;
+                    width: 1px;
+                    height: 13px;
+                    background: rgba(0, 0, 0, 0.40);
+                }
+            }
+        }
+    }
+    &__copyright {
+        display: flex;
+        flex: 1;
+        justify-content: end;
+        color: rgba(0, 0, 0, 0.40);
+        font-size: 12px;
+        margin-top: 28px;
+    }
+
 }

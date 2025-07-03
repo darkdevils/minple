@@ -4,102 +4,136 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="../css/style.css">
+
   <title>밈플폰 - 검섹</title>
-  <style>
-    .gnb {
-      border-top: 2px solid #e74c3c; /* 상단 빨간 선 */
-      border-bottom: 1px solid #ddd;
-      font-family: sans-serif;
-    }
+  <!DOCTYPE html>
+  <html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>Custom Dropdown</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 50px;
+      }
 
-    .gnb__list {
-      display: flex;
-      justify-content: space-around;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      background: #fff;
-    }
+      .select-box {
+        position: relative;
+        width: 200px;
+        cursor: pointer;
+      }
 
-    .gnb__item {
-      position: relative;
-      padding: 12px 16px;
-    }
+      .select-box__selected {
+        display: block;
+        padding: 10px 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+      }
 
-    .gnb__link {
-      background: none;
-      border: none;
-      font-size: 14px;
-      color: #999;
-      cursor: pointer;
-    }
+      .select-box__options {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 4px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: #fff;
+        max-height: 160px;
+        overflow-y: auto;
+        z-index: 10;
+        display: none;
 
-    .gnb__item--active .gnb__link {
-      color: #3059f5;
-      font-weight: bold;
-      position: relative;
-    }
+        padding-right: 12px; /* 👈 내용과 스크롤바 사이 띄움 */
+        box-sizing: content-box;
+      }
 
-    .gnb__item--active .gnb__link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 70%;
-      height: 2px;
-      background: #3059f5;
-    }
+      .select-box.active .select-box__options {
+        display: block;
+      }
 
-    .gnb__submenu {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      background: #f9f9f9;
-      padding: 12px 0;
-      margin: 0;
-      list-style: none;
-    }
+      .select-box__option a {
+        display: block;
+        padding: 10px 12px;
+        text-decoration: none;
+        color: #333;
+      }
 
-    .gnb__submenu-item a {
-      text-decoration: none;
-      font-size: 13px;
-      color: #999;
-    }
+      .select-box__option a:hover {
+        background-color: #f5f5f5;
+      }
 
-    .gnb__submenu-item a:hover,
-    .gnb__submenu-item a:focus {
-      color: #3059f5;
-      font-weight: 600;
-    }
-  </style>
+      /* ✅ Custom Scrollbar */
+      .select-box__options::-webkit-scrollbar {
+        width: 20px;
+      }
 
-</head>
-<body>
-<div class="gnb">
-  <ul class="gnb__list">
-    <li class="gnb__item">
-      <button class="gnb__link">판매 정책 관리</button>
-    </li>
-    <li class="gnb__item gnb__item--active">
-      <button class="gnb__link">상담 / 개통 관리</button>
-      <ul class="gnb__submenu">
-        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">상담접수관리</a></li>
-        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">개통관리</a></li>
-        <li class="gnb__submenu-item"><a href="#" class="gnb__submenu-link">마케팅대상관리</a></li>
-      </ul>
-    </li>
-    <li class="gnb__item">
-      <button class="gnb__link">매장 관리</button>
-    </li>
-    <li class="gnb__item">
-      <button class="gnb__link">커뮤니티</button>
-    </li>
-  </ul>
-</div>
+      .select-box__options::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .select-box__options::-webkit-scrollbar-thumb {
+
+      }
+
+      .select-box__options::-webkit-scrollbar-thumb:hover {
+        background-color: #000;
+      }
+
+      /* Firefox 대응 */
+      .select-box__options {
+        scrollbar-width: thin;
+        scrollbar-color: #999 transparent;
+      }
+    </style>
+  </head>
+  <body>
+
+  <div class="select-box">
+    <span class="select-box__selected">개통유형 A</span>
+    <ul class="select-box__options">
+      <li class="select-box__option"><a href="#">전체</a></li>
+      <li class="select-box__option"><a href="#">개통유형 A</a></li>
+      <li class="select-box__option"><a href="#">개통유형 B</a></li>
+      <li class="select-box__option"><a href="#">개통유형 C</a></li>
+      <li class="select-box__option"><a href="#">개통유형 D</a></li>
+      <li class="select-box__option"><a href="#">개통유형 E</a></li>
+      <li class="select-box__option"><a href="#">개통유형 F</a></li>
+      <li class="select-box__option"><a href="#">개통유형 G</a></li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectBox = document.querySelector('.select-box');
+      const selected = selectBox.querySelector('.select-box__selected');
+      const options = selectBox.querySelectorAll('.select-box__option a');
+
+      selected.addEventListener('click', () => {
+        selectBox.classList.toggle('active');
+      });
+
+      options.forEach(option => {
+        option.addEventListener('click', (e) => {
+          e.preventDefault();
+          selected.textContent = option.textContent;
+          selectBox.classList.remove('active');
+        });
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!selectBox.contains(e.target)) {
+          selectBox.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+  </body>
+  </html>
 
 
-</body>
+
+  </body>
 </html>
