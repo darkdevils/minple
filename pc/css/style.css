@@ -1106,7 +1106,7 @@ input[type=search]::-webkit-search-cancel-button {
 .layout__main {
   width: 1280px;
   margin: 0 auto;
-  padding: 16px 0;
+  padding: 16px 0 40px;
 }
 .layout__main .section-title {
   display: flex;
@@ -1130,6 +1130,7 @@ input[type=search]::-webkit-search-cancel-button {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  padding: 0 0 28px;
 }
 .layout__main .form-filters .form-filter__group {
   display: flex;
@@ -1140,6 +1141,10 @@ input[type=search]::-webkit-search-cancel-button {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: -0.12px;
+}
+
+.layout__footer {
+  background: #F4F5F6;
 }
 
 .select-box {
@@ -1232,6 +1237,197 @@ input[type=search]::-webkit-search-cancel-button {
   letter-spacing: -0.28px;
   border-radius: 10px;
   background: #544FE4;
+}
+.btn--small {
+  min-width: 56px;
+  height: 28px;
+  padding: 0 10px;
+  border: 1px solid rgba(84, 79, 228, 0.2);
+  background: #fff;
+  color: #544FE4;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  border-radius: 8px;
+}
+.btn--small:hover {
+  background: #fff;
+}
+
+.consult-status {
+  background: #fff;
+  padding: 24px 0 47px;
+  border-radius: 0 0 40px 40px;
+  overflow: hidden;
+}
+.consult-status__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.consult-status__header {
+  display: flex;
+  padding: 0 0 0 40px;
+  gap: 4px;
+}
+.consult-status__heading {
+  color: #202224;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.28px;
+}
+.consult-status__count {
+  color: #333;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+}
+.consult-status__actions {
+  display: flex;
+  gap: 4px;
+  padding: 0 28px 0 0;
+}
+.consult-status__table {
+  margin: 0 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+.consult-status__table .table--list {
+  width: 100%;
+  border-collapse: collapse;
+}
+.consult-status__table .table--list thead {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.consult-status__table .table--list thead th {
+  color: #202224;
+  background: #FAFAFA;
+  height: 32px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.24px;
+}
+.consult-status__table .table--list thead th .input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.consult-status__table .table--list thead th .input-checkbox .custom-checkbox + label {
+  background: url(../img/ico_check_off_total.svg);
+}
+.consult-status__table .table--list thead th .input-checkbox .custom-checkbox:checked + label {
+  background: url(../img/ico_check_on.svg);
+  background-color: #fff;
+}
+.consult-status__table .table--list tbody {
+  display: block;
+  max-height: 500px;
+  overflow-y: auto;
+}
+.consult-status__table .table--list tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.consult-status__table .table--list tbody tr td {
+  color: #666;
+  height: 32px;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+  text-align: center;
+}
+.consult-status__table .table--list tbody tr td .input-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.consult-status__table .table--list tbody tr td.left {
+  text-align: left;
+}
+.consult-status__table .table--list tbody tr td.attachment div {
+  width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.consult-status__table .table--list tbody tr:hover td {
+  background: #FAFAFA;
+}
+.consult-status__table .table--list tbody tr.checked td {
+  color: #544FE4;
+  font-weight: 600;
+  background: #FAFAFA;
+}
+.consult-status__table .table--list th:first-child, .consult-status__table .table--list td:first-child {
+  width: 40px;
+}
+.consult-status__table .table--list th.subject, .consult-status__table .table--list td.subject {
+  width: 472px;
+}
+.consult-status__table .table--list th.date, .consult-status__table .table--list td.date {
+  width: 172px;
+}
+.consult-status__table .table--list th.views, .consult-status__table .table--list td.views {
+  width: 140px;
+}
+
+.custom-checkbox {
+  display: none;
+}
+.custom-checkbox + label {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  background: url(../img/ico_check_off.svg);
+}
+.custom-checkbox:checked + label {
+  background: url(../img/ico_check_on.svg);
+  background-color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 0;
+}
+.pagination__list {
+  display: flex;
+  gap: 4px;
+}
+.pagination__item.active a {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  color: #202224;
+  font-weight: 600;
+}
+.pagination a {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 30px;
+  color: #757575;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: -0.28px;
+}
+.pagination a.pagination__firstprev {
+  background: url(../img/ico_firstprev.svg) no-repeat center;
+}
+.pagination a.pagination__prev {
+  background: url(../img/ico_prev.svg) no-repeat center;
+}
+.pagination a.pagination__next {
+  background: url(../img/ico_next.svg) no-repeat center;
+}
+.pagination a.pagination__lastnext {
+  background: url(../img/ico_lastnext.svg) no-repeat center;
 }
 
 /*# sourceMappingURL=style.css.map */

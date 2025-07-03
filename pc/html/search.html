@@ -6,6 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css">
+  <!-- datepicker css,js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <!-- //datepicker css,js -->
   <title>밈플폰 - 검섹</title>
 </head>
 <body>
@@ -97,7 +102,7 @@
           <div class="form-filter">
             <strong class="form-filter__label">방문예정일</strong>
             <div class="form-filter__field">
-              <input type="text" id="datepicker" class="input-text" placeholder="YYYY-MM-DD">
+              <input type="text" id="dateInput" class="input-text" placeholder="YYYY-MM-DD">
             </div>
           </div>
         </div>
@@ -106,43 +111,176 @@
         </div>
       </div>
       <div class="consult-status">
-        <div class="consult-status__header">
-          <h3 class="section-title__heading">상담접수현황</h3>
-          <span class="section-title__count">(총 200건)</span>
+        <div class="consult-status__inner">
+          <div class="consult-status__header">
+            <h3 class="section-title__heading">상담접수현황</h3>
+            <span class="section-title__count">(총 200건)</span>
+          </div>
+          <div class="consult-status__actions">
+            <button type="button" class="btn btn--small">신규</button>
+            <button type="button" class="btn btn--small">방문/미방문 </button>
+          </div>
         </div>
-        <div class="consult-status__actions">
-          <button type="button" class="btn btn--small">신규</button>
-          <button type="button" class="btn btn--small">방문/미방문 </button>
-        </div>
-      </div>
-      <div class="consult-status__table">
-        <table class="table table--list">
-          <colgroup>
-            <col>
-            <col>
-            <col>
-            <col>
-            <col>
-          </colgroup>
-          <thead>
+        <div class="consult-status__table">
+          <table class="table table--list">
+            <thead>
             <tr>
-              <th><input type="checkbox" name="" id=""></th>
-              <th>게시물 제목</th>
-              <th>등록일시</th>
-              <th>조회수</th>
-              <th>첨부</th>
+              <th><div class="input-checkbox"><input type="checkbox" name="" id="customCheck1" class="custom-checkbox"><label for="customCheck1"></label></div></th>
+              <th class="subject">게시물 제목</th>
+              <th class="date">등록일시</th>
+              <th class="views">조회수</th>
+              <th class="attachment">첨부</th>
             </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td><input type="checkbox" name="" id=""></td>
-            <td>공지사항 제목입니다.</td>
-            <td>2024-01-01 10:20</td>
-            <td>0</td>
-            <td>확인해야 할 내용.zip</td>
-          </tr>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck2" class="custom-checkbox"><label for="customCheck2"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck3" class="custom-checkbox"><label for="customCheck3"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck4" class="custom-checkbox"><label for="customCheck4"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck5" class="custom-checkbox"><label for="customCheck5"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck6" class="custom-checkbox"><label for="customCheck6"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr><tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            <tr>
+              <td><div class="input-checkbox"><input type="checkbox" name="" id="customCheck7" class="custom-checkbox"><label for="customCheck7"></label></div></td>
+              <td class="subject left">공지사항 제목입니다.</td>
+              <td class="date">2024-01-01 10:20</td>
+              <td class="views">0</td>
+              <td class="attachment left"><div>확인해야할 내용.zip</div></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination" aria-label="페이지 이동">
+          <ul class="pagination__list">
+            <li class="pagination__item"><a href="#" class="pagination__firstprev" aria-label="맨 처음 페이지"></a></li>
+            <li class="pagination__item"><a href="#" class="pagination__prev" aria-label="이전 페이지"></a></li>
+            <li class="pagination__item"><a href="#" aria-label="1">1</a></li>
+            <li class="pagination__item"><a href="#" aria-label="2">2</a></li>
+            <li class="pagination__item"><a href="#" aria-label="3">3</a></li>
+            <li class="pagination__item active"><a href="#" aria-label="4">4</a></li>
+            <li class="pagination__item"><a href="#" aria-label="5">5</a></li>
+            <li class="pagination__item"><a href="#" aria-label="6">6</a></li>
+            <li class="pagination__item"><a href="#" aria-label="7">7</a></li>
+            <li class="pagination__item"><a href="#" aria-label="8">8</a></li>
+            <li class="pagination__item"><a href="#" aria-label="9">9</a></li>
+            <li class="pagination__item"><a href="#" aria-label="10">10</a></li>
+            <li class="pagination__item"><a href="#" class="pagination__next" aria-label="다음 페이지"></a></li>
+            <li class="pagination__item"><a href="#" class="pagination__lastnext" aria-label="맨 끝 페이지"></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </main>
@@ -251,6 +389,113 @@
       });
     });
   });
+
+  // 전체 체크박스 요소들
+  const masterCheckbox = document.getElementById('customCheck1'); // thead
+  const rowCheckboxes = document.querySelectorAll('.custom-checkbox:not(#customCheck1)');
+
+  // (1) 헤더 체크박스 클릭 시 → 전체 체크박스 체크 상태 동기화
+  masterCheckbox.addEventListener('change', () => {
+      rowCheckboxes.forEach((checkbox) => {
+          checkbox.checked = masterCheckbox.checked;
+          toggleRowClass(checkbox);
+      });
+  });
+
+  // (2) 각 row 체크박스 상태에 따라 해당 tr에 class 토글
+  rowCheckboxes.forEach((checkbox) => {
+      checkbox.addEventListener('change', () => {
+          toggleRowClass(checkbox);
+      });
+  });
+
+  function toggleRowClass(checkbox) {
+      const row = checkbox.closest('tr');
+      if (checkbox.checked) {
+          row.classList.add('checked');
+      } else {
+          row.classList.remove('checked');
+      }
+  }
+
+  flatpickr("#dateInput", {
+      locale: "ko",
+      dateFormat: "Y-m-d",
+      defaultDate: "today",
+
+      onReady: function (selectedDates, dateStr, instance) {
+          // === 연도 이동 버튼 추가 ===
+          const navContainer = instance.calendarContainer.querySelector(".flatpickr-months");
+
+          const monthElement = instance.calendarContainer.querySelector(".flatpickr-month");
+
+          if (monthElement) {
+              // 포인터 이벤트 막기 (기본 클릭 막기)
+              monthElement.style.pointerEvents = "none";
+              // 커서도 막힌 느낌으로
+              monthElement.style.cursor = "default";
+          }
+
+          if (navContainer) {
+              const yearNavWrapper = document.createElement("div");
+              yearNavWrapper.className = "flatpickr-year-buttons";
+              yearNavWrapper.style.display = "flex";
+              yearNavWrapper.style.justifyContent = "space-between";
+              yearNavWrapper.style.margin = "4px 0";
+
+              const prevYearBtn = document.createElement("button");
+              prevYearBtn.textContent = "◀ 1년";
+              prevYearBtn.style.fontSize = "12px";
+              prevYearBtn.style.padding = "2px 6px";
+              prevYearBtn.style.cursor = "pointer";
+              prevYearBtn.addEventListener("click", () => {
+                  instance.changeYear(instance.currentYear - 1);
+              });
+
+              const nextYearBtn = document.createElement("button");
+              nextYearBtn.textContent = "1년 ▶";
+              nextYearBtn.style.fontSize = "12px";
+              nextYearBtn.style.padding = "2px 6px";
+              nextYearBtn.style.cursor = "pointer";
+              nextYearBtn.addEventListener("click", () => {
+                  instance.changeYear(instance.currentYear + 1);
+              });
+
+              yearNavWrapper.appendChild(prevYearBtn);
+              yearNavWrapper.appendChild(nextYearBtn);
+
+              // 월 네비게이션 아래 삽입
+              navContainer.appendChild(yearNavWrapper);
+          }
+
+          // === 저장/닫기 버튼 생성 ===
+          const btnContainer = document.createElement("div");
+          btnContainer.className = "flatpickr-custom-buttons";
+          btnContainer.style.display = "flex";
+          btnContainer.style.justifyContent = "flex-end";
+          btnContainer.style.gap = "8px";
+          btnContainer.style.padding = "8px 10px";
+          btnContainer.style.borderTop = "1px solid #eee";
+
+          const saveBtn = document.createElement("button");
+          saveBtn.textContent = "저장";
+          saveBtn.addEventListener("click", () => {
+              console.log("선택된 날짜:", instance.input.value);
+              instance.close();
+          });
+
+          const closeBtn = document.createElement("button");
+          closeBtn.textContent = "닫기";
+          closeBtn.addEventListener("click", () => {
+              instance.close();
+          });
+
+          btnContainer.appendChild(saveBtn);
+          btnContainer.appendChild(closeBtn);
+          instance.calendarContainer.appendChild(btnContainer);
+      }
+  });
+
 
 </script>
 
