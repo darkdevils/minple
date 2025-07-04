@@ -321,15 +321,15 @@
     <ul class="info-list">
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+        <div class="info-list__value"><a href="#" class="datepicker-link">공지사항 제목입니다.</a></div>
       </li>
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+        <div class="info-list__value"><a href="#" class="text-link">공지사항 제목입니다.</a></div>
       </li>
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+        <div class="info-list__value"><a href="#" class="text-link">공지사항 제목입니다.</a></div>
       </li>
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
@@ -502,13 +502,13 @@
           // === 연도 이동 버튼 추가 ===
           const navContainer = instance.calendarContainer.querySelector(".flatpickr-months");
 
-          const monthElement = instance.calendarContainer.querySelector(".flatpickr-month");
+          const monthElement = instance.calendarContainer.querySelector(".numInputWrapper");
 
           if (monthElement) {
-              /*// 포인터 이벤트 막기 (기본 클릭 막기)
+              // 포인터 이벤트 막기 (기본 클릭 막기)
               monthElement.style.pointerEvents = "none";
               // 커서도 막힌 느낌으로
-              monthElement.style.cursor = "default";*/
+              monthElement.style.cursor = "default";
           }
 
           if (navContainer) {
@@ -532,6 +532,7 @@
                   instance.changeYear(instance.currentYear + 1);
               });
 
+
               yearNavWrapper.appendChild(prevYearBtn);
               yearNavWrapper.appendChild(nextYearBtn);
 
@@ -545,11 +546,10 @@
           btnContainer.style.display = "flex";
           btnContainer.style.justifyContent = "flex-end";
           btnContainer.style.gap = "8px";
-          btnContainer.style.padding = "8px 10px";
-          btnContainer.style.borderTop = "1px solid #eee";
 
           const saveBtn = document.createElement("button");
           saveBtn.textContent = "저장";
+          saveBtn.classList.add('save');
           saveBtn.addEventListener("click", () => {
               console.log("선택된 날짜:", instance.input.value);
               instance.close();
@@ -566,6 +566,27 @@
           instance.calendarContainer.appendChild(btnContainer);
       }
   });
+
+  const dateInput = document.getElementById("dateInput");
+
+  if (dateInput) {
+      const wrapper = dateInput.closest(".form-filter__field");
+
+      // MutationObserver로 클래스 변화 감지
+      const observer = new MutationObserver((mutationsList) => {
+          for (const mutation of mutationsList) {
+              if (mutation.attributeName === "class") {
+                  if (dateInput.classList.contains("active")) {
+                      wrapper?.classList.add("active");
+                  } else {
+                      wrapper?.classList.remove("active");
+                  }
+              }
+          }
+      });
+
+      observer.observe(dateInput, { attributes: true });
+  }
 
   // 모달팝업
   const modal = document.querySelector('.modal');
