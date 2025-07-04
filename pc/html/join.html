@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.mcustomscrollbar/3.0.6/jquery.mCustomScrollbar.min.css">
+  <!-- datepicker css,js -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+  <!-- //datepicker css,js -->
+  <title>밈플폰 - 회원가입</title>
+</head>
+<body>
+<div id="wrap">
+  <!-- 헤더 모듈 -->
+  <header class="layout__header header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <img src="../img/logo.svg" alt="밈플폰">
+        <span class="header__logo-text">폰이싸 폰이싸 폰이싸 폰이싸 폰이싸 폰이싸 폰이싸</span>
+      </div>
+      <div class="header__user">
+        <div class="header__user-info">
+          <strong class="header__user-name">오펜타</strong>
+          <span class="header__user-branch">MIM폰 가양대교점</span>
+        </div>
+        <a href="#" class="header__auth">로그아웃</a>
+      </div>
+    </div>
+  </header>
+  <!-- //헤더 모듈 -->
+
+  <!-- GNB -->
+  <!--<div class="gnb">
+    <ul class="gnb__list">
+      <li class="gnb__item"><a href="#">판매 정책 관리</a>
+        <ul class="gnb__submenu">
+          <li class="gnb__submenu-item"><a href="#">메뉴1-1</a></li>
+          <li class="gnb__submenu-item"><a href="#">메뉴1-2</a></li>
+          <li class="gnb__submenu-item"><a href="#">메뉴1-3</a></li>
+        </ul>
+      </li>
+      <li class="gnb__item"><a href="#">상담/개통 관리</a>
+        <ul class="gnb__submenu">
+          <li class="gnb__submenu-item"><a href="#">상담접수관리</a></li>
+          <li class="gnb__submenu-item"><a href="#">개통관리</a></li>
+          <li class="gnb__submenu-item"><a href="#">마케팅대상관리</a></li>
+        </ul>
+      </li>
+      <li class="gnb__item"><a href="#">매장 관리</a></li>
+      <li class="gnb__item"><a href="#">커뮤니티</a></li>
+    </ul>
+  </div>-->
+  <!-- //GNB -->
+  <!-- 메인 콘텐츠 영역 -->
+  <main class="layout__main join">
+    <div class="main__container container">
+      <div class="section">
+        <div class="section-title">
+          <h2 class="section-title__heading">밈플폰 가입 신청</h2>
+          <span class="section-title__desc">필수 입력 정보입니다.</span>
+        </div>
+        <div class="section__notice">가입 신청시 승인까지 최대 3영업일이 소요될 수 있으니 참고해주세요.</div>
+      </div>
+      <div class="form-fields">
+        <!-- 사업자등록번호 -->
+        <div class="form-field">
+          <strong class="form-field__label required">사업자등록번호</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap"><input type="text" name="" id="" class="form-field__input" placeholder="사업자등록번호를 입력해주세요"></div>
+            <p class="form-field__hint">’-’ 없이 숫자 10자리를 입력해주세요.</p>
+          </div>
+        </div>
+        <!-- //사업자등록번호 -->
+        <!-- 대표자명 -->
+        <div class="form-field">
+          <strong class="form-field__label required">대표자명</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap"><input type="text" name="" id="" placeholder="대표자명을 입력해주세요"></div>
+            <p class="form-field__hint">사업자등록증의 대표자명과 동일하게 입력해주세요.</p>
+          </div>
+        </div>
+        <!-- //대표자명 -->
+        <!-- 매장명 -->
+        <div class="form-field">
+          <strong class="form-field__label required">매장명</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap"><input type="text" name="" id="" class="form-field__input" placeholder="매장명을 입력해주세요"></div>
+            <p class="form-field__hint">최소 2자~ 최대 10자까지 입력할 수 있어요.</p>
+          </div>
+        </div>
+        <!-- //매장명 -->
+        <!-- 닉네임 -->
+        <div class="form-field">
+          <strong class="form-field__label required">닉네임</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap input-button">
+              <input type="text" name="" id="" class="form-field__input" placeholder="영문, 숫자, 한글 2~8자 입력해주세요">
+              <button type="button" class="form-field__button">중복체크</button>
+            </div>
+            <p class="form-field__hint">닉네임은 30일 이후 변경할 수 있어요.</p>
+          </div>
+        </div>
+        <!-- //닉네임 -->
+
+        <!-- 주소 -->
+        <div class="form-field">
+          <strong class="form-field__label required">주소</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap input-button">
+              <input type="text" name="" id="" class="form-field__input" placeholder="주소를 검색해주세요">
+              <button type="button" class="form-field__button modal-open-btn" data-target="#consultModal">주소검색</button>
+            </div>
+          </div>
+        </div>
+        <!-- //주소 -->
+        <!-- 빈 input -->
+        <div class="form-field">
+          <strong class="form-field__label">&nbsp;</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap">
+              <input type="text" name="" id="" class="form-field__input" placeholder="">
+            </div>
+          </div>
+        </div>
+        <!-- //빈 input -->
+        <!-- 상세주소 -->
+        <div class="form-field long-field">
+          <strong class="form-field__label required">상세주소</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap">
+              <input type="text" name="" id="" class="form-field__input" placeholder="상세 주소를 입력해주세요">
+            </div>
+          </div>
+        </div>
+        <!-- //상세주소 -->
+        <!-- 매장 위치 URL -->
+        <div class="form-field">
+          <strong class="form-field__label required">매장 위치 URL</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap"><input type="text" name="" id="" class="form-field__input" placeholder="매장 위치 URL을 입력해주세요"></div>
+            <p class="form-field__hint">네이버 등의 지도 URL을 입력해주세요.</p>
+          </div>
+        </div>
+        <!-- //매장 위치 URL -->
+        <!-- 매장 연락처 -->
+        <div class="form-field">
+          <strong class="form-field__label required">매장 연락처</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap"><input type="text" name="" id="" class="form-field__input" placeholder="매장 연락처를 입력해주세요"></div>
+          </div>
+        </div>
+        <!-- //매장 연락처 -->
+        <!-- 증빙서류 첨부 -->
+        <div class="form-field long-field">
+          <strong class="form-field__label required">증빙서류 첨부<span>첨부파일은 육안으로 식별이 가능해야 하며, 서류 검토시 문제가 있을 경우 서비스 이용에 제한을 받을 수 있어요.</span></strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap input-button">
+              <input type="text" name="" id="" class="form-field__input" placeholder="사업자등록증 1부와 간판을 포함한 매장 사진 2장을 zip 파일로 업로드해주세요">
+              <button type="button" class="form-field__button">파일첨부</button>
+            </div>
+            <p class="form-field__hint">개인사업자의 경우, 사업자등록증에 대표자 주민등록번호가 명시되어 있다면 주민등록번호 뒷자리를 마스킹 처리 후 제출해주세요.</p>
+          </div>
+        </div>
+        <!-- //증빙서류 첨부 -->
+        <!-- 아이디 -->
+        <div class="form-field">
+          <strong class="form-field__label required">아이디</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap input-button">
+              <input type="text" name="" id="" class="form-field__input" placeholder="이메일을 입력해주세요">
+              <button type="button" class="form-field__button">중복확인</button>
+            </div>
+            <p class="form-field__hint error">사용할 수 있는 이메일이에요.</p>
+          </div>
+        </div>
+        <!-- //아이디 -->
+        <!-- 비밀번호 -->
+        <div class="form-field">
+          <strong class="form-field__label required">비밀번호</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap">
+              <input type="text" name="" id="" class="form-field__input" placeholder="비밀번호를 입력해주세요">
+            </div>
+            <p class="form-field__hint">영문/숫자/특수문자(!@#$%^&+=)를 조합하여 8~20자로 입력해주세요.</p>
+          </div>
+        </div>
+        <!-- //비밀번호 -->
+        <!-- 비밀번호 확인 -->
+        <div class="form-field">
+          <strong class="form-field__label required">비밀번호 확인</strong>
+          <div class="form-field__content">
+            <div class="form-field__input-wrap">
+              <input type="text" name="" id="" class="form-field__input" placeholder="비밀번호를 입력해주세요">
+            </div>
+          </div>
+        </div>
+        <!-- //비밀번호 확인 -->
+      </div>
+
+      <div class="terms">
+        <div class="section-title">
+          <h2 class="section-title__heading">개인정보 수집 및 이용에 대한 안내</h2>
+          <span class="section-title__desc">필수 입력 정보입니다.</span>
+        </div>
+
+        <div class="terms__item terms__item--all input-checkbox">
+          <input type="checkbox" name="" id="agreeAll" class="custom-checkbox"><label for="agreeAll" class="terms__label">모두 동의합니다.</label>
+        </div>
+        <div class="terms__item">
+          <input type="checkbox" name="" id="agree1" class="custom-checkbox"><label for="agree1" class="terms__label"><span class="terms__tag">(필수)</span>서비스 이용약관에 동의합니다.</label>
+        </div>
+        <div class="terms__item">
+          <input type="checkbox" name="" id="agree2" class="custom-checkbox"><label for="agree2" class="terms__label"><span class="terms__tag">(필수)</span>개인정보 수집 및 이용에 동의합니다.</label>
+        </div>
+        <div class="terms__item">
+          <input type="checkbox" name="" id="agree3" class="custom-checkbox"><label for="agree3" class="terms__label"><span class="terms__tag">(필수)</span>만 14세 이상입니다.</label>
+        </div>
+        <div class="terms__item">
+          <input type="checkbox" name="" id="agree4" class="custom-checkbox"><label for="agree4" class="terms__label"><span>(선택)</span>이벤트 목적의 개인정보 수집 및 이용에 동의합니다.</label>
+        </div>
+        <button type="button" class="btn">가입신청</button>
+      </div>
+    </div>
+  </main>
+  <!-- //메인 콘텐츠 영역 -->
+</div>
+
+<!-- 도로명 주소 검색 모달 -->
+<div class="modal consult-modal" id="consultModal">
+  <button type="button" class="btn-topclose modal-close-btn"><span class="blind">모달닫기</span></button>
+  <div class="modal__header">
+    <h3 class="modal__title">도로명 주소 검색</h3>
+    <span class="modal__subtitle no-ico">ex) 도로명 (반포대로 58), 건물명 (독립기념관), 지번 (삼성동 25)</span>
+  </div>
+  <div class="address-table">
+    <table class="address-table__inner">
+      <thead>
+      <tr>
+        <th></th>
+        <th>도로명주소</th>
+        <th>우편번호</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio1" class="custom-radio"><label for="radio1"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio2" class="custom-radio"><label for="radio2"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio3" class="custom-radio"><label for="radio3"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio4" class="custom-radio"><label for="radio4"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio5" class="custom-radio"><label for="radio5"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio6" class="custom-radio"><label for="radio6"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio7" class="custom-radio"><label for="radio7"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio8" class="custom-radio"><label for="radio8"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio9" class="custom-radio"><label for="radio9"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio10" class="custom-radio"><label for="radio10"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio11" class="custom-radio"><label for="radio11"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio12" class="custom-radio"><label for="radio12"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio13" class="custom-radio"><label for="radio13"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio14" class="custom-radio"><label for="radio14"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="input-radio">
+            <input type="radio" name="radio" id="radio15" class="custom-radio"><label for="radio15"></label>
+          </div>
+        </td>
+        <td>서울특별시 송파구 송파대로 37길 57-2 (석촌동)</td>
+        <td class="center">075077</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal__footer">
+    <button type="button" class="btn modal-open-btn">닫기</button>
+    <button type="button" class="btn consult-modal__btn-save">저장</button>
+  </div>
+</div>
+<!-- //상담 접수 상세 모달 -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const agreeAll = document.getElementById('agreeAll');
+        const checkboxes = document.querySelectorAll('.custom-checkbox:not(#agreeAll)');
+
+        // "모두 동의합니다" 체크 시
+        agreeAll.addEventListener('change', function () {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = agreeAll.checked;
+            });
+        });
+
+        // 개별 항목 상태 변화 시 → 모두 체크됐는지 감지
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+                agreeAll.checked = allChecked;
+            });
+        });
+    });
+
+    // 모달팝업
+    document.addEventListener('DOMContentLoaded', () => {
+        const openBtns = document.querySelectorAll('.modal-open-btn');
+        const closeBtns = document.querySelectorAll('.modal-close-btn');
+        const modals = document.querySelectorAll('.modal');
+
+        // 모달 열기
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetSelector = btn.getAttribute('data-target');
+                const targetModal = document.querySelector(targetSelector);
+                if (targetModal) {
+                    targetModal.classList.add('modal--visible');
+                }
+            });
+        });
+
+        // 모달 닫기 (닫기 버튼)
+        closeBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const modal = btn.closest('.modal');
+                modal.classList.remove('modal--visible');
+            });
+        });
+
+        // ESC 키로 닫기
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => modal.classList.remove('modal--visible'));
+            }
+        });
+    });
+
+</script>
+
+</body>
+</html>

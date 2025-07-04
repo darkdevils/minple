@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
   <!-- //datepicker css,js -->
-  <title>밈플폰 - 검섹</title>
+  <title>밈플폰 - 검색</title>
 </head>
 <body>
 <div id="wrap">
@@ -38,7 +38,7 @@
     <ul class="gnb__list">
       <li class="gnb__item"><a href="#">판매 정책 관리</a>
         <ul class="gnb__submenu">
-          <li class="gnb__submenu-item"><a href="#">메뉴1-1</a></li>
+          <li class="gnb__submenu-item"><a href="#">상담 접수 관리</a></li>
           <li class="gnb__submenu-item"><a href="#">메뉴1-2</a></li>
           <li class="gnb__submenu-item"><a href="#">메뉴1-3</a></li>
         </ul>
@@ -108,7 +108,7 @@
             </div>
           </div>
           <div class="form-filter__action">
-            <button type="button" class="btn btn--primary" id="openConsultModal">조회</button>
+            <button type="button" class="btn btn--primary modal-open-btn" data-target="#consultModal">조회</button>
           </div>
         </div>
       </div>
@@ -311,8 +311,8 @@
 </div>
 
 <!-- 상담 접수 상세 모달 -->
-<div class="modal consult-modal">
-  <button type="button" class="btn-topclose consult-modal__close-btn"><span class="blind">모달닫기</span></button>
+<div class="modal consult-modal" id="consultModal">
+  <button type="button" class="btn-topclose modal-close-btn"><span class="blind">모달닫기</span></button>
   <div class="modal__header">
     <h3 class="modal__title">상담 접수 상세</h3>
     <span class="modal__subtitle">필수 입력 정보입니다</span>
@@ -321,28 +321,70 @@
     <ul class="info-list">
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#" class="datepicker-link">공지사항 제목입니다.</a></div>
-      </li>
-      <li class="info-list__item">
-        <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#" class="text-link">공지사항 제목입니다.</a></div>
-      </li>
-      <li class="info-list__item">
-        <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#" class="text-link">공지사항 제목입니다.</a></div>
-      </li>
-      <li class="info-list__item">
-        <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
-      </li>
-      <li class="info-list__item">
-        <strong class="info-list__label">제목</strong>
-        <div class="info-list__value"><a href="#">공지사항 제목입니다.</a></div>
+        <div class="info-list__value">
+          <div class="form-filter__field datepicker">
+            <input type="text" id="dateInput2" class="input-text" placeholder="YYYY-MM-DD">
+          </div>
+        </div>
       </li>
       <li class="info-list__item">
         <strong class="info-list__label">제목</strong>
         <div class="info-list__value">
-          <a href="#">공지사항 제목입니다.</a>
+          <div class="select-box">
+            <span class="select-box__selected">제목</span>
+            <ul class="select-box__options">
+              <li class="select-box__option"><a href="#">제목1</a></li>
+              <li class="select-box__option"><a href="#">제목2</a></li>
+              <li class="select-box__option"><a href="#">제목3</a></li>
+              <li class="select-box__option"><a href="#">제목4</a></li>
+              <li class="select-box__option"><a href="#">제목5</a></li>
+              <li class="select-box__option"><a href="#">제목6</a></li>
+              <li class="select-box__option"><a href="#">제목7</a></li>
+              <li class="select-box__option"><a href="#">제목8</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value">
+          <div class="select-box">
+            <span class="select-box__selected">전체</span>
+            <ul class="select-box__options">
+              <li class="select-box__option"><a href="#">개통유형1</a></li>
+              <li class="select-box__option"><a href="#">개통유형2</a></li>
+              <li class="select-box__option"><a href="#">개통유형3</a></li>
+              <li class="select-box__option"><a href="#">개통유형4</a></li>
+              <li class="select-box__option"><a href="#">개통유형5</a></li>
+              <li class="select-box__option"><a href="#">개통유형6</a></li>
+              <li class="select-box__option"><a href="#">개통유형7</a></li>
+              <li class="select-box__option"><a href="#">개통유형8</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value">
+          <div class="form-filter__field">
+            <input type="text" name="nickname2" id="nickname2" class="input-text" placeholder="닉네임 입력">
+          </div>
+        </div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value">
+          <div class="form-filter__field">
+            <input type="text" name="text" id="text" class="input-text" placeholder="공지사항 제목입니다.">
+          </div>
+        </div>
+      </li>
+      <li class="info-list__item">
+        <strong class="info-list__label">제목</strong>
+        <div class="info-list__value">
+          <div class="form-filter__field">
+            <input type="text" name="text" id="text2" class="input-text" placeholder="내용수정가능">
+          </div>
           <div class="input-checkbox"><input type="checkbox" class="custom-checkbox" id="ck1"><label for="ck1">오프라인</label></div>
         </div>
       </li>
@@ -363,7 +405,7 @@
     </div>
   </section>
   <div class="modal__footer">
-    <button type="button" class="btn consult-modal__close-btn">닫기</button>
+    <button type="button" class="btn modal-open-btn">닫기</button>
     <button type="button" class="btn consult-modal__btn-save">저장</button>
   </div>
 </div>
@@ -373,7 +415,8 @@
   document.addEventListener('DOMContentLoaded', function () {
     // gnb
     const gnb = document.querySelector('.gnb');
-    const gnbItems = document.querySelectorAll('.gnb__item > a');
+    //const gnbItems = document.querySelectorAll('.gnb__item > a');
+    const gnbItems = document.querySelectorAll('.gnb__item');
     const subMenuLinks = document.querySelectorAll('.gnb__submenu-item > a');
 
     // 초기 상태: gnb__item.active 중에 submenu 있는 경우 → gnb에 on 추가
@@ -385,7 +428,7 @@
     }
 
     // 상위 메뉴 클릭 시
-    gnbItems.forEach(link => {
+    /*gnbItems.forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
 
@@ -412,6 +455,30 @@
           item.classList.remove('active');
         });
       });
+    });*/
+
+    // 마우스 오버 시 상위 메뉴에 active 적용
+    gnbItems.forEach(item => {
+        item.addEventListener('mouseenter', function () {
+            // 모든 상위 메뉴에서 active 제거
+            gnbItems.forEach(el => el.classList.remove('active'));
+
+            // 현재 메뉴(li)에 active 추가
+            item.classList.add('active');
+
+            // submenu 유무에 따라 .gnb에 .on 추가
+            const subMenu = item.querySelector('.gnb__submenu');
+            if (subMenu) {
+                gnb.classList.add('on');
+            } else {
+                gnb.classList.remove('on');
+            }
+
+            // 모든 하위 메뉴 active 초기화
+            document.querySelectorAll('.gnb__submenu-item').forEach(sub => {
+                sub.classList.remove('active');
+            });
+        });
     });
 
     // 하위 메뉴 클릭 시
@@ -426,6 +493,9 @@
 
         // 현재 선택한 하위 메뉴에 active 추가
         this.parentElement.classList.add('active');
+
+        // gnb의 .on 클래스 제거
+        gnb.classList.remove('on');
       });
     });
 
@@ -436,11 +506,17 @@
       const selected = box.querySelector('.select-box__selected');
       const options = box.querySelectorAll('.select-box__option a');
 
-      selected.addEventListener('click', () => {
+      selected.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        const isActive = box.classList.contains('active');
+
         // 모든 드롭다운 닫기
         selectBoxes.forEach((b) => b.classList.remove('active'));
-        // 현재 선택박스만 열기
-        box.classList.toggle('active');
+        // 현재 클릭한 box가 닫힌 상태였다면 열기
+        if (!isActive) {
+            box.classList.add('active');
+        }
       });
 
       options.forEach((option) => {
@@ -452,6 +528,11 @@
       });
     });
 
+    // 바깥쪽 클릭 시 모두 닫기
+    document.addEventListener('click', () => {
+        selectBoxes.forEach((b) => b.classList.remove('active'));
+    });
+
     // 다른 곳 클릭하면 닫기
     document.addEventListener('click', (e) => {
       selectBoxes.forEach((box) => {
@@ -460,6 +541,7 @@
         }
       });
     });
+
   });
 
   // 전체 체크박스 요소들
@@ -493,7 +575,7 @@
   }
 
   // datepicker
-  flatpickr("#dateInput", {
+  flatpickr("#dateInput,#dateInput2", {
       locale: "ko",
       dateFormat: "Y-m-d",
       defaultDate: "today",
@@ -507,7 +589,6 @@
           if (monthElement) {
               // 포인터 이벤트 막기 (기본 클릭 막기)
               monthElement.style.pointerEvents = "none";
-              // 커서도 막힌 느낌으로
               monthElement.style.cursor = "default";
           }
 
@@ -589,18 +670,36 @@
   }
 
   // 모달팝업
-  const modal = document.querySelector('.modal');
-  const openBtn = document.getElementById('openConsultModal');
-  const closeBtn = document.querySelector('.consult-modal__close-btn');
+  document.addEventListener('DOMContentLoaded', () => {
+      const openBtns = document.querySelectorAll('.modal-open-btn');
+      const closeBtns = document.querySelectorAll('.modal-close-btn');
+      const modals = document.querySelectorAll('.modal');
 
-  // 모달 열기
-  openBtn.addEventListener('click', () => {
-    modal.classList.add('modal--visible');
-  });
+      // 모달 열기
+      openBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const targetSelector = btn.getAttribute('data-target');
+              const targetModal = document.querySelector(targetSelector);
+              if (targetModal) {
+                  targetModal.classList.add('modal--visible');
+              }
+          });
+      });
 
-  // 모달 닫기
-  closeBtn.addEventListener('click', () => {
-    modal.classList.remove('modal--visible');
+      // 모달 닫기 (닫기 버튼)
+      closeBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const modal = btn.closest('.modal');
+              modal.classList.remove('modal--visible');
+          });
+      });
+
+      // ESC 키로 닫기
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+              modals.forEach(modal => modal.classList.remove('modal--visible'));
+          }
+      });
   });
 
 </script>
